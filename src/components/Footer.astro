@@ -1,0 +1,25 @@
+---
+import { Github, Linkedin, Mail } from 'lucide-react';
+---
+
+<footer class="bg-gray-900 border-t border-gray-800 py-12 mt-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="text-center md:text-left">
+      <p class="text-gray-400 text-sm">
+        © {new Date().getFullYear()} Francisco Javier Nuñez Luna. All rights reserved.
+      </p>
+    </div>
+    
+    <div class="flex gap-6">
+      <a href="https://github.com/cronerstat/cronerstat/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+        <Github className="w-5 h-5" />
+      </a>
+      <a href="https://www.linkedin.com/in/fconunezluna/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+        <Linkedin className="w-5 h-5" />
+      </a>
+      <a href="mailto:jyd.demi@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+        <Mail className="w-5 h-5" />
+      </a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,35 @@
+---
+const links = [
+  { text: "Experience", href: "#experience" },
+  { text: "Projects", href: "#projects" },
+  { text: "Skills", href: "#skills" },
+];
+---
+
+<header class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800/50">
+  <nav class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+      FN
+    </a>
+    
+    <ul class="flex gap-6">
+      {links.map((link) => (
+        <li>
+          <a 
+            href={link.href} 
+            class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200"
+          >
+            {link.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+    
+    <a 
+      href="#contact" 
+      class="hidden sm:block px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors duration-200"
+    >
+      Contact
+    </a>
+  </nav>
+</header>

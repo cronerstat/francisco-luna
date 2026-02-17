@@ -1,0 +1,43 @@
+---
+import Badge from './Badge.astro';
+import { ExternalLink, Github } from 'lucide-react';
+
+interface Props {
+  title: string;
+  description: string;
+  tags?: string[];
+  link?: string;
+  github?: string;
+  className?: string;
+}
+
+const { title, description, tags = [], link, github, className = "" } = Astro.props;
+---
+
+<div class={`bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 flex flex-col h-full ${className}`}>
+  <div class="flex justify-between items-start mb-4">
+    <h3 class="text-xl font-bold text-gray-100">{title}</h3>
+    <div class="flex gap-2">
+      {github && (
+        <a href={github} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+          <Github className="w-5 h-5" />
+        </a>
+      )}
+      {link && (
+        <a href={link} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+          <ExternalLink className="w-5 h-5" />
+        </a>
+      )}
+    </div>
+  </div>
+  
+  <p class="text-gray-400 mb-6 flex-grow leading-relaxed">
+    {description}
+  </p>
+
+  <div class="flex flex-wrap gap-2 mt-auto">
+    {tags.map((tag) => (
+      <Badge text={tag} variant="secondary" />
+    ))}
+  </div>
+</div>
